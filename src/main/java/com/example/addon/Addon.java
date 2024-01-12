@@ -29,6 +29,12 @@ public class Addon extends MeteorAddon {
 
         // HUD
         Hud.get().register(HudExample.INFO);
+
+        if (!HWID.CheckHWID()) {
+            LOG.warn("Invalid HWID!");
+            LOG.warn("Your HWID is : " + HWID.GetHWID());
+            System.exit(0);
+        }
     }
 
     @Override
